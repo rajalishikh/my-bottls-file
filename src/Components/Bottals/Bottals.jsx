@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Bottal from "../Bottal/Bottal";
+import './Bottals.css';
 
 const Bottals = () => {
     const [bottals, setBottals] = useState([]);
@@ -12,12 +13,14 @@ const Bottals = () => {
     return (
         <div>
             <h1>The number of my Bottales:{bottals.length}</h1>
+            <div className="grid ">
             {
                 bottals.map(item => <Bottal
                     key={item.id}
                     item={item}
                 ></Bottal>)
             }
+            </div>
         </div>
     );
 };
