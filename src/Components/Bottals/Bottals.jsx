@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Bottal from "../Bottal/Bottal";
 
 const Bottals = () => {
     const [bottals, setBottals] = useState([]);
@@ -10,7 +11,13 @@ const Bottals = () => {
     },[])
     return (
         <div>
-            <h1>The number of my Bottales:{ bottals.length}</h1>
+            <h1>The number of my Bottales:{bottals.length}</h1>
+            {
+                bottals.map(item => <Bottal
+                    key={item.id}
+                    item={item}
+                ></Bottal>)
+            }
         </div>
     );
 };
