@@ -4,18 +4,26 @@ import './Bottals.css';
 
 const Bottals = () => {
     const [bottals, setBottals] = useState([]);
+    const [parches1, setPurches] = useState([]);
     useEffect(() => {
         fetch('Bottale.json')
             .then(res => res.json())
             .then(data => setBottals(data))
         
-    },[])
+    }, [])
+    const handlePurches = (purches) => {
+        console.log("add my purches section");
+        const newPurches = [...parches1, purches];
+        setPurches(newPurches);
+    }
     return (
         <div>
             <h1>The number of my Bottales:{bottals.length}</h1>
+            <p>The number of my total bottals{ parches1.length}</p>
             <div className="grid ">
             {
-                bottals.map(item => <Bottal
+                    bottals.map(item => <Bottal
+                    handlePurches={handlePurches}
                     key={item.id}
                     item={item}
                 ></Bottal>)
