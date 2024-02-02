@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import Bottal from "../Bottal/Bottal";
 import './Bottals.css';
 
@@ -12,10 +13,17 @@ const Bottals = () => {
         
     }, [])
     const handlePurches = (purches) => {
-        console.log("add my purches section");
+       
         const newPurches = [...parches1, purches];
+        console.log("add my purches section",purches);
         setPurches(newPurches);
+        //  save local storage 
+        
+
+       
     }
+    //  load cart from local storage 
+    
     return (
         <div>
             <h1>The number of my Bottales:{bottals.length}</h1>
